@@ -9,6 +9,8 @@ public class PlayerSingleton : MonoBehaviour
 
     [Header("Components Reference")]
     [SerializeField] private PlayerAnimationsHandler playerAnimationsHandler = null;
+    [SerializeField] private PlayerMovementHandler playerMovementHandler = null;
+
     #endregion
 
     #region MonoBehaviour Functions
@@ -24,5 +26,7 @@ public class PlayerSingleton : MonoBehaviour
 
     #region Getter And Setter
     public PlayerAnimationsHandler GetPlayerAnimationsHandler { get => playerAnimationsHandler; }
+    public PlayerMovementHandler GetPlayerMovementHandler { get => playerMovementHandler; }
+
     #endregion
 }

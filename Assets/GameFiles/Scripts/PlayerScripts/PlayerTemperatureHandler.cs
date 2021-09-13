@@ -15,7 +15,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [SerializeField] private TextMeshPro temperatureTxt = null;
 
     private Material playerMat = null;
-    private float playerTemperature = 0f;
+    [SerializeField] private float playerTemperature = 0f;
     #endregion
 
     #region MonoBehaviour Functions
@@ -29,7 +29,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
     #region Private Core Functions
     private void InitialSettings()
     {
-        playerTemperature = minTemp;
+        playerTemperature = 0;
         playerMat.SetFloat("_FillAmount", playerTemperature);
     }
     #endregion
@@ -46,7 +46,16 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             playerTemperature = minTemp;
         }
-        temperatureTxt.SetText(((int)(playerTemperature * 100f)).ToString() + " C");
+        if(playerTemperature >= 0)
+        {
+            temperatureTxt.SetText(playerTemperature + " C");
+
+        }
+        else if(playerTemperature > 0)
+        {
+            temperatureTxt.SetText("-"+playerTemperature*100 + " C");
+        }
+        temperatureTxt.SetText(playerTemperature + " C");
         playerMat.SetFloat("_FillAmount", playerTemperature);
     }
     #endregion
