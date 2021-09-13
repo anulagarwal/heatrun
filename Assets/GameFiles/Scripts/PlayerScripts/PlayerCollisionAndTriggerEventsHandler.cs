@@ -6,6 +6,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
 {
     #region Properties
     [Header("Components Reference")]
+    [SerializeField] private PlayerMovementHandler playerMovementHandler = null;
     [SerializeField] private PlayerTemperatureHandler playerTemperatureHandler = null;
     #endregion
 
@@ -16,6 +17,11 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
         {
             playerTemperatureHandler.UpdatePlayerTemperature(other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature);
             Destroy(other.gameObject);
+        }
+        else if (other.gameObject.tag == "Finish")
+        {
+            playerMovementHandler.enabled = false;
+            LevelManager.Instance.GameOver(GameOverState.Victory);
         }
     }
     #endregion

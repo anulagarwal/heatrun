@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerTemperatureHandler : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [SerializeField] private float maxTemp = 1f;
 
     [Header("Components Reference")]
-    [SerializeField] private MeshRenderer meshRenderer = null;
+    [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
+    [SerializeField] private TextMeshPro temperatureTxt = null;
 
     private Material playerMat = null;
     private float playerTemperature = 0f;
@@ -44,6 +46,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             playerTemperature = minTemp;
         }
+        temperatureTxt.SetText(((int)(playerTemperature * 100f)).ToString() + " C");
         playerMat.SetFloat("_FillAmount", playerTemperature);
     }
     #endregion

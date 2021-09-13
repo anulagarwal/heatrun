@@ -6,6 +6,9 @@ public class PlayerSingleton : MonoBehaviour
 {
     #region Properties
     public static PlayerSingleton Instance = null;
+
+    [Header("Components Reference")]
+    [SerializeField] private PlayerAnimationsHandler playerAnimationsHandler = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -17,5 +20,9 @@ public class PlayerSingleton : MonoBehaviour
         }
         Instance = this;
     }
+    #endregion
+
+    #region Getter And Setter
+    public PlayerAnimationsHandler GetPlayerAnimationsHandler { get => playerAnimationsHandler; }
     #endregion
 }

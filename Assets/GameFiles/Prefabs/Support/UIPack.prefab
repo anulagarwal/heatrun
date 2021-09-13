@@ -830,6 +830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643fccdac82a7ee4199948665c86abc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuUIPanel: {fileID: 6256924089932221092}
+  gameplayUIPanel: {fileID: 6256924090155313644}
+  gameOverWinUIPanel: {fileID: 1233862729952582332}
+  gameOverLoseUIPanel: {fileID: 6256924090848699660}
   movementJS: {fileID: 5597103424982831818}
 --- !u!1 &6256924089932221092
 GameObject:
