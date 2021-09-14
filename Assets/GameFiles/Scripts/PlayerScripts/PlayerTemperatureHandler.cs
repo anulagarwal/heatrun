@@ -48,14 +48,14 @@ public class PlayerTemperatureHandler : MonoBehaviour
         }
         if(playerTemperature >= 0)
         {
-            temperatureTxt.SetText(playerTemperature + " C");
+            temperatureTxt.text = (playerTemperature + " C");
 
         }
         else if(playerTemperature > 0)
         {
-            temperatureTxt.SetText("-"+playerTemperature*100 + " C");
+            temperatureTxt.text = ("-"+playerTemperature*100 + " C");
         }
-        temperatureTxt.SetText(playerTemperature + " C");
+        temperatureTxt.text = (playerTemperature + " C");
         playerMat.SetFloat("_FillAmount", playerTemperature);
     }
     #endregion

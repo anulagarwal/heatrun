@@ -23,7 +23,6 @@ public class PlayerMovementHandler : MonoBehaviour
     #region MonoBehaviour Functions
     private void Start()
     {
-        movementJS = LevelUIManager.Instance.GetMovementJS;
 
         //Testing
         PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
@@ -55,21 +54,7 @@ public class PlayerMovementHandler : MonoBehaviour
                 x = (Input.mousePosition.x - oldX) / 4;
                 oldX = Input.mousePosition.x;
             }
-        shiftSpeed = x;
-        if (x > 0)
-        {
-            //movementDirection = new Vector3(shiftSpeed, 0, 1 * moveSpeed) * Time.deltaTime;
-        }
-
-        else if (x < 0)
-        {
-          //  movementDirection = new Vector3(-shiftSpeed, 0, 1 * moveSpeed) * Time.deltaTime;
-        }
-        else
-        {
-           // movementDirection = new Vector3(0, 0, 1 * moveSpeed) * Time.deltaTime;
-        }
-
+        shiftSpeed = x;       
     }
     #endregion
 

@@ -25,7 +25,6 @@ public class LevelManager : MonoBehaviour
     {
         PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
         PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
-
     }
     #endregion
 
@@ -45,7 +44,6 @@ public class LevelManager : MonoBehaviour
             PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
             confettiObj.SetActive(true);
             Invoke("VictoryScreen", 1.4f);
-
         }
         else if (state == GameOverState.Defeat)
         {
