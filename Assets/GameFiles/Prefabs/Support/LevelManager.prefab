@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a353128d9ea8f4ab9349b63e64b7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confettiObj: {fileID: 0}
+  confettiObj: {fileID: 1667944840333525391}
 --- !u!1 &6611031653090667123
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bebb13010d8657649960371fb49d5a9b, type: 3}
+--- !u!1 &1667944840333525391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1667944839285485161, guid: bebb13010d8657649960371fb49d5a9b, type: 3}
+  m_PrefabInstance: {fileID: 1132998630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1667944840333525424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1667944839285485142, guid: bebb13010d8657649960371fb49d5a9b, type: 3}

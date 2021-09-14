@@ -26,7 +26,7 @@ public class PlayerMovementHandler : MonoBehaviour
         movementJS = LevelUIManager.Instance.GetMovementJS;
 
         //Testing
-    //    PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Idle);
+        PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
     }
 
     private void Update()
