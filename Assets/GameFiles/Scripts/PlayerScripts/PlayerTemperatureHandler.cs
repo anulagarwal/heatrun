@@ -18,11 +18,26 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [SerializeField] private float playerTemperature = 0f;
     #endregion
 
+    #region Delegates
+    public delegate void TempDecrementMechanism();
+
+    public TempDecrementMechanism tempChangeMechanism;
+    #endregion
+
     #region MonoBehaviour Functions
     private void Start()
     {
         playerMat = meshRenderer.material;
         InitialSettings();
+        tempChangeMechanism = null;
+    }
+
+    private void Update()
+    {
+        if (tempChangeMechanism != null)
+        {
+            tempChangeMechanism();
+        }
     }
     #endregion
 
@@ -32,9 +47,52 @@ public class PlayerTemperatureHandler : MonoBehaviour
         playerTemperature = 0;
         playerMat.SetFloat("_FillAmount", playerTemperature);
     }
+
+    private void TempDecrement()
+    {
+        playerTemperature -= 1 * Time.deltaTime;
+        TempTxtUpdate();
+    }
+
+    private void TempIncrement()
+    {
+        playerTemperature += 1 * Time.deltaTime;
+        TempTxtUpdate();
+    }
+
+    private void TempTxtUpdate()
+    {
+        playerTemperature = (int)playerTemperature;
+        if (playerTemperature >= 0)
+        {
+            temperatureTxt.text = (playerTemperature + " C");
+
+        }
+        else if (playerTemperature > 0)
+        {
+            temperatureTxt.text = ("-" + playerTemperature + " C");
+        }
+        temperatureTxt.text = (playerTemperature + " C");
+        playerMat.SetFloat("_FillAmount", playerTemperature / maxTemp);
+    }
     #endregion
 
     #region Public Core Functions
+    public void TempChange(bool decrease, float timer)
+    {
+        tempChangeMechanism = null;
+        if (decrease)
+        {
+            tempChangeMechanism += TempDecrement;
+        }
+        else
+        {
+            tempChangeMechanism += TempIncrement;
+        }
+
+        Invoke("TempChangeStop", timer);
+    }
+
     public void UpdatePlayerTemperature(float value)
     {
         playerTemperature += value;
@@ -46,17 +104,15 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             playerTemperature = minTemp;
         }
-        if(playerTemperature >= 0)
-        {
-            temperatureTxt.text = (playerTemperature + " C");
 
-        }
-        else if(playerTemperature > 0)
-        {
-            temperatureTxt.text = ("-"+playerTemperature*100 + " C");
-        }
-        temperatureTxt.text = (playerTemperature + " C");
-        playerMat.SetFloat("_FillAmount", playerTemperature);
+        TempTxtUpdate();
+    }
+    #endregion
+
+    #region Invoke Functions
+    private void TempChangeStop()
+    {
+        tempChangeMechanism = null;
     }
     #endregion
 }

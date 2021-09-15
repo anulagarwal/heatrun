@@ -10,6 +10,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
     [SerializeField] private PlayerTemperatureHandler playerTemperatureHandler = null;
     [SerializeField] private ParticleSystem tempRiseVFX = null;
     [SerializeField] private ParticleSystem tempDropVFX = null;
+    [SerializeField] private Transform obstacleHolder = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -18,23 +19,44 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             playerTemperatureHandler.UpdatePlayerTemperature(other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature);
-            if (other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature < 0)
+
+            if (other.gameObject.TryGetComponent<ObstaclesHandler>(out ObstaclesHandler obstaclesHandler))
             {
-                tempRiseVFX.Stop();
-                if (!tempDropVFX.isPlaying)
+                if (!obstaclesHandler.IsStickable)
                 {
-                    tempDropVFX.Play();
+                    if (obstaclesHandler.GetTemperature < 0)
+                    {
+                        tempRiseVFX.Stop();
+                        if (!tempDropVFX.isPlaying)
+                        {
+                            tempDropVFX.Play();
+                        }
+                    }
+                    else if (obstaclesHandler.GetTemperature > 0)
+                    {
+                        tempDropVFX.Stop();
+                        if (!tempRiseVFX.isPlaying)
+                        {
+                            tempRiseVFX.Play();
+                        }
+                    }
+                    Destroy(other.gameObject);
+                }
+                else
+                {
+                    other.gameObject.transform.position = obstacleHolder.position;
+                    other.gameObject.transform.parent = obstacleHolder;
+                    obstaclesHandler.DestroyObstacle();
+                    if (obstaclesHandler.GetTemperature < 0)
+                    {
+                        playerTemperatureHandler.TempChange(true, obstaclesHandler.GetObstacleDestroyTime);
+                    }
+                    else
+                    {
+                        playerTemperatureHandler.TempChange(true, obstaclesHandler.GetObstacleDestroyTime);
+                    }
                 }
             }
-            else if (other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature > 0)
-            {
-                tempDropVFX.Stop();
-                if (!tempRiseVFX.isPlaying)
-                {
-                    tempRiseVFX.Play();
-                }
-            }
-            Destroy(other.gameObject);
         }
         else if (other.gameObject.tag == "Finish")
         {

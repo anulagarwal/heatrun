@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2536839777262078215}
   - component: {fileID: 2536839777262078214}
+  - component: {fileID: 1220988303}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -46,6 +47,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confettiObj: {fileID: 1667944840333525391}
+--- !u!114 &1220988303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2536839777262078232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a1ec202dd1e4ef4abe45e7b31c0458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platforms:
+  - {fileID: 7049930165452228394, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
+  - {fileID: 7049930165452228394, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
+  - {fileID: 7049930165452228394, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
+  - {fileID: 7049930165452228394, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
+  - {fileID: 7049930165452228394, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
+  - {fileID: 7049930165452228394, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
+  - {fileID: 1665217781989440757, guid: 23c70f97b0fa54838a54267c5c2e0c3d, type: 3}
+  spawnedObjects: []
+  platformDistance: 25
+  initialOffset: 12.5
 --- !u!1 &6611031653090667123
 GameObject:
   m_ObjectHideFlags: 0

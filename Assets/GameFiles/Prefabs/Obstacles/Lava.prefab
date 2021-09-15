@@ -126,3 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: 35
+  stickable: 1
+  obstacleDestroyTime: 5
