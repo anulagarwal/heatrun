@@ -59,7 +59,6 @@ public class PlayerTemperatureHandler : MonoBehaviour
         TempTxtUpdate();
         if (ActiveStuckedObstacle)
         {
-            print("Inside");
             ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, true);
         }
     }
