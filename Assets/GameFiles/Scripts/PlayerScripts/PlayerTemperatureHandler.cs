@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 using TMPro;
 
 public class PlayerTemperatureHandler : MonoBehaviour
@@ -14,6 +16,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
     [SerializeField] private TextMeshPro temperatureTxt = null;
+    [SerializeField] private Image tempBar = null;
+
 
     private Material playerMat = null;
     [SerializeField] private float playerTemperature = 0f;
@@ -84,7 +88,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             temperatureTxt.text = ("-" + (int)playerTemperature + " C");
         }
-        temperatureTxt.text = ((int)playerTemperature + " C");
+      //  temperatureTxt.text = ((int)playerTemperature + " C");
+        tempBar.fillAmount = playerTemperature / maxTemp;
         playerMat.SetFloat("_FillAmount", playerTemperature / maxTemp);
     }
     #endregion
