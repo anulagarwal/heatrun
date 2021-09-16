@@ -18,12 +18,12 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            playerTemperatureHandler.UpdatePlayerTemperature(other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature);
-
             if (other.gameObject.TryGetComponent<ObstaclesHandler>(out ObstaclesHandler obstaclesHandler))
             {
                 if (!obstaclesHandler.IsStickable)
                 {
+                    playerTemperatureHandler.UpdatePlayerTemperature(other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature);
+
                     if (obstaclesHandler.GetTemperature < 0)
                     {
                         tempRiseVFX.Stop();
@@ -44,9 +44,11 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                 }
                 else
                 {
-                    other.gameObject.transform.position = obstacleHolder.position;
-                    other.gameObject.transform.parent = obstacleHolder;
+                    PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
+                    //other.gameObject.transform.position = obstacleHolder.position;
+                    //other.gameObject.transform.parent = obstacleHolder;
                     obstaclesHandler.DestroyObstacle();
+                    playerTemperatureHandler.ActiveStuckedObstacle = obstaclesHandler;
                     if (obstaclesHandler.GetTemperature < 0)
                     {
                         playerTemperatureHandler.TempChange(true, obstaclesHandler.GetObstacleDestroyTime);

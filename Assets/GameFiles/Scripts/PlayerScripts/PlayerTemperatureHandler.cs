@@ -9,6 +9,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float minTemp = -1f;
     [SerializeField] private float maxTemp = 1f;
+    [SerializeField] private float tempChangeSpeed = 0f;
 
     [Header("Components Reference")]
     [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
@@ -41,6 +42,10 @@ public class PlayerTemperatureHandler : MonoBehaviour
     }
     #endregion
 
+    #region Getter And Setter
+    public ObstaclesHandler ActiveStuckedObstacle { get; set; }
+    #endregion
+
     #region Private Core Functions
     private void InitialSettings()
     {
@@ -50,29 +55,37 @@ public class PlayerTemperatureHandler : MonoBehaviour
 
     private void TempDecrement()
     {
-        playerTemperature -= 1 * Time.deltaTime;
+        playerTemperature -= tempChangeSpeed * Time.deltaTime;
         TempTxtUpdate();
+        if (ActiveStuckedObstacle)
+        {
+            print("Inside");
+            ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, true);
+        }
     }
 
     private void TempIncrement()
     {
-        playerTemperature += 1 * Time.deltaTime;
+        playerTemperature += tempChangeSpeed * Time.deltaTime;
         TempTxtUpdate();
+        if (ActiveStuckedObstacle)
+        {
+            ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, false);
+        }
     }
 
     private void TempTxtUpdate()
     {
-        playerTemperature = (int)playerTemperature;
         if (playerTemperature >= 0)
         {
-            temperatureTxt.text = (playerTemperature + " C");
+            temperatureTxt.text = ((int)playerTemperature + " C");
 
         }
         else if (playerTemperature > 0)
         {
-            temperatureTxt.text = ("-" + playerTemperature + " C");
+            temperatureTxt.text = ("-" + (int)playerTemperature + " C");
         }
-        temperatureTxt.text = (playerTemperature + " C");
+        temperatureTxt.text = ((int)playerTemperature + " C");
         playerMat.SetFloat("_FillAmount", playerTemperature / maxTemp);
     }
     #endregion
@@ -113,6 +126,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
     private void TempChangeStop()
     {
         tempChangeMechanism = null;
+        ActiveStuckedObstacle = null;
+        PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = true;
     }
     #endregion
 }
