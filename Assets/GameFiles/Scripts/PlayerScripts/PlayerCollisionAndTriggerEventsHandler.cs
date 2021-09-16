@@ -55,7 +55,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                     }
                     else
                     {
-                        playerTemperatureHandler.TempChange(true, obstaclesHandler.GetObstacleDestroyTime);
+                        playerTemperatureHandler.TempChange(false, obstaclesHandler.GetObstacleDestroyTime);
                     }
                 }
             }
