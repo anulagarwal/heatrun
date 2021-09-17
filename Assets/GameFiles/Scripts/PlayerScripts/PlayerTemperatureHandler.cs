@@ -12,10 +12,14 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [SerializeField] private float minTemp = -1f;
     [SerializeField] private float maxTemp = 1f;
     [SerializeField] private float tempChangeSpeed = 0f;
+    [SerializeField] private float barFillSpeed = 0f;
+
 
     [Header("Components Reference")]
     [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
     [SerializeField] private TextMeshPro temperatureTxt = null;
+    [SerializeField] private TextMeshProUGUI tempText = null;
+
     [SerializeField] private Image tempBar = null;
 
 
@@ -43,6 +47,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             tempChangeMechanism();
         }
+        tempBar.fillAmount = Mathf.Lerp(tempBar.fillAmount, playerTemperature / maxTemp, barFillSpeed);
+
     }
     #endregion
 
@@ -88,10 +94,36 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             temperatureTxt.text = ("-" + (int)playerTemperature + " C");
         }
+        UpdateText();
       //  temperatureTxt.text = ((int)playerTemperature + " C");
-        tempBar.fillAmount = playerTemperature / maxTemp;
         playerMat.SetFloat("_FillAmount", playerTemperature / maxTemp);
     }
+
+    void UpdateText()
+    {
+        if (playerTemperature > 0 && playerTemperature < 20)
+        {
+            tempText.text = "COLD!";
+        }
+        if (playerTemperature >= 20 && playerTemperature < 40)
+        {
+            tempText.text = "WARM!";
+        }
+
+        if (playerTemperature >= 40 && playerTemperature < 70)
+        {
+            tempText.text = "HOT!";
+        }
+        if (playerTemperature >= 70 && playerTemperature < 100)
+        {
+            tempText.text = "SUPER HOT!!!";
+        }
+        if (playerTemperature >= 100)
+        {
+            tempText.text = "SUPER FIRE!!!";
+        }
+    }
+
     #endregion
 
     #region Public Core Functions

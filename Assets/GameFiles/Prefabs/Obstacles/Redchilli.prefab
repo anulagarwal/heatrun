@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &763109162852798546
 RectTransform:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd2905cb6642ae45817e961e8e1d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: 35
-  stickable: 1
+  temperature: 5
+  stickable: 0
   obstacleDestroyTime: 2
   obstacleTempTxt: {fileID: 4988018775991940371}

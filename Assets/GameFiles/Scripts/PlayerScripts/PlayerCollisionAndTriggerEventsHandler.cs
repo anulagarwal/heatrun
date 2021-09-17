@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
 {
@@ -66,5 +67,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
             LevelManager.Instance.GameOver(GameOverState.Victory);
         }
     }
+
+   
     #endregion
 }
