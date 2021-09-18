@@ -45,7 +45,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                 }
                 else
                 {
-                    PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
+                    PlayerSingleton.Instance.GetPlayerMovementHandler.ForceStop = true;
                     //other.gameObject.transform.position = obstacleHolder.position;
                     //other.gameObject.transform.parent = obstacleHolder;
                     obstaclesHandler.DestroyObstacle();
@@ -68,6 +68,15 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
         }
     }
 
-   
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<ObstaclesHandler>(out ObstaclesHandler obstaclesHandler))
+        {
+            if (obstaclesHandler.IsStickable)
+            {
+                playerTemperatureHandler.TempChangeStop();
+            }
+        }
+    }
     #endregion
 }

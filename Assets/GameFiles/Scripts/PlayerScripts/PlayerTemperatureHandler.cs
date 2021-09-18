@@ -159,11 +159,11 @@ public class PlayerTemperatureHandler : MonoBehaviour
     #endregion
 
     #region Invoke Functions
-    private void TempChangeStop()
+    public void TempChangeStop()
     {
         tempChangeMechanism = null;
         ActiveStuckedObstacle = null;
-        PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = true;
+        PlayerSingleton.Instance.GetPlayerMovementHandler.ForceStop = false;
     }
     #endregion
 }

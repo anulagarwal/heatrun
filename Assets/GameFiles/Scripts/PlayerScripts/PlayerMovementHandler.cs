@@ -17,7 +17,6 @@ public class PlayerMovementHandler : MonoBehaviour
     private Vector3 movementDirection = Vector3.zero;
     private float screenCenterX = 0f;
     private float oldX;
-
     #endregion
 
     #region MonoBehaviour Functions
@@ -26,16 +25,26 @@ public class PlayerMovementHandler : MonoBehaviour
 
         //Testing
         PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
+
+        ForceStop = false;
     }
 
     private void Update()
     {
-        TouchInputs();
-       // movementDirection = new Vector3(movementJS.Horizontal, 0, 1).normalized;
-        //characterController.Move(movementDirection * Time.deltaTime * moveSpeed);
-        transform.Translate(new Vector3(shiftSpeed, 0, moveSpeed) * Time.deltaTime);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-4.5f,4.5f),transform.position.y, transform.position.z);
-
+        if (!ForceStop)
+        {
+            TouchInputs();
+            // movementDirection = new Vector3(movementJS.Horizontal, 0, 1).normalized;
+            //characterController.Move(movementDirection * Time.deltaTime * moveSpeed);
+            transform.Translate(new Vector3(shiftSpeed, 0, moveSpeed) * Time.deltaTime);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -4.5f, 4.5f), transform.position.y, transform.position.z);
+        }
+        else
+        {
+            TouchInputs();
+            transform.Translate(new Vector3(shiftSpeed, 0, 0) * Time.deltaTime);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -4.5f, 4.5f), transform.position.y, transform.position.z);
+        }
     }
     #endregion
 
@@ -58,7 +67,7 @@ public class PlayerMovementHandler : MonoBehaviour
     }
     #endregion
 
-    #region
-
+    #region Getter And Setter
+    public bool ForceStop { get; set; }
     #endregion
 }

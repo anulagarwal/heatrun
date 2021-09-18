@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
-        PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
+        PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Idle);
     }
     #endregion
 
@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
         }
         else if (state == GameOverState.Defeat)
         {
-        
+
             PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
             PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Victory);
             Invoke("LoseScreen", 1.4f);
