@@ -61,7 +61,8 @@ public class LevelManager : MonoBehaviour
 
     void VictoryScreen()
     {
-        LevelUIManager.Instance.SwitchUIPanel(UIPanelState.Win);
+        LevelUIManager.Instance.SwapGameplayPanel();
+        //LevelUIManager.Instance.SwitchUIPanel(UIPanelState.Win);
     }
 
     void LoseScreen()
