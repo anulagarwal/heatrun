@@ -11,6 +11,7 @@ public class PlayerSingleton : MonoBehaviour
     [SerializeField] private PlayerAnimationsHandler playerAnimationsHandler = null;
     [SerializeField] private PlayerMovementHandler playerMovementHandler = null;
     [SerializeField] private GameObject beamObj = null;
+    [SerializeField] internal Transform beamStartPoint = null;
 
     #endregion
 

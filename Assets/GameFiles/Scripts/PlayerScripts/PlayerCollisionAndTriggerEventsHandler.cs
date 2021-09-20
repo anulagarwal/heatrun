@@ -67,6 +67,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
             LevelManager.Instance.GameOver(GameOverState.Victory);
 
             LevelUIManager.Instance.EnablePBDecrementMech();
+            LevelManager.Instance.SwitchCamera();
         }
     }
 

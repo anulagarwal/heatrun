@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confettiObj: {fileID: 1667944840333525391}
+  cm_1: {fileID: 0}
+  cm_2: {fileID: 0}
 --- !u!114 &1220988303
 MonoBehaviour:
   m_ObjectHideFlags: 0

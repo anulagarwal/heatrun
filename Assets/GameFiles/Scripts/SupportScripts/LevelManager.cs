@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class LevelManager : MonoBehaviour
 
     [Header("Components Reference")]
     [SerializeField] private GameObject confettiObj = null;
+    [SerializeField] private GameObject cm_1 = null;
+    [SerializeField] private GameObject cm_2 = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -54,7 +57,13 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void SwitchCamera()
+    {
+        cm_1.SetActive(false);
+        cm_2.SetActive(true);
 
+        cm_2.GetComponent<CinemachineVirtualCameraBase>().Follow = PlayerSingleton.Instance.beamStartPoint;
+    }
     #endregion
 
     #region Invoke functions
