@@ -45,8 +45,7 @@ public class LevelManager : MonoBehaviour
         {
             PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Victory);
             PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
-            confettiObj.SetActive(true);
-            Invoke("VictoryScreen", 1.4f);
+            Invoke("LevelEndMultiplierPanel", 1.4f);
         }
         else if (state == GameOverState.Defeat)
         {
@@ -64,14 +63,25 @@ public class LevelManager : MonoBehaviour
 
         cm_2.GetComponent<CinemachineVirtualCameraBase>().Follow = PlayerSingleton.Instance.beamStartPoint;
     }
+
+    public void DisplayEndScreen()
+    {
+        confettiObj.transform.position = GameObject.FindGameObjectWithTag("ConfettiSpawnPoint").transform.position;
+        confettiObj.SetActive(true);
+        Invoke("VictoryScreen", 2f);
+    }
     #endregion
 
     #region Invoke functions
+    private void LevelEndMultiplierPanel()
+    {
+        LevelUIManager.Instance.SwapGameplayPanel();
+    }
+
 
     void VictoryScreen()
     {
-        LevelUIManager.Instance.SwapGameplayPanel();
-        //LevelUIManager.Instance.SwitchUIPanel(UIPanelState.Win);
+        LevelUIManager.Instance.SwitchUIPanel(UIPanelState.Win);
     }
 
     void LoseScreen()

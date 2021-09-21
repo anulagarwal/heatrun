@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - Beam
+  - Destroyable
+  - ConfettiSpawnPoint
   layers:
   - Default
   - TransparentFX

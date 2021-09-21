@@ -135,6 +135,7 @@ public class LevelUIManager : MonoBehaviour
     private void StopBeam()
     {
         PlayerSingleton.Instance.GetBeamObj.SetActive(false);
+        LevelManager.Instance.DisplayEndScreen();
     }
     #endregion
 }
