@@ -54,6 +54,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
 
     #region Getter And Setter
     public ObstaclesHandler ActiveStuckedObstacle { get; set; }
+
+    public float GetPlayerTemperature { get => playerTemperature; }
     #endregion
 
     #region Private Core Functions

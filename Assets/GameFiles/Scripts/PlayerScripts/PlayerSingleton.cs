@@ -10,6 +10,7 @@ public class PlayerSingleton : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private PlayerAnimationsHandler playerAnimationsHandler = null;
     [SerializeField] private PlayerMovementHandler playerMovementHandler = null;
+    [SerializeField] private PlayerTemperatureHandler playerTemperatureHandler = null;
     [SerializeField] private GameObject beamObj = null;
     [SerializeField] internal Transform beamStartPoint = null;
 
@@ -32,5 +33,7 @@ public class PlayerSingleton : MonoBehaviour
     public PlayerMovementHandler GetPlayerMovementHandler { get => playerMovementHandler; }
 
     public GameObject GetBeamObj { get => beamObj; }
+
+    public PlayerTemperatureHandler GetPlayerTemperatureHandler { get => playerTemperatureHandler; }
     #endregion
 }
