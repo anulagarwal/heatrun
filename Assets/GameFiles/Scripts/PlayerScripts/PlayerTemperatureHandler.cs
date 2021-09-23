@@ -90,15 +90,18 @@ public class PlayerTemperatureHandler : MonoBehaviour
         if (playerTemperature >= 0)
         {
             temperatureTxt.text = ((int)playerTemperature + " C");
-
+            playerMat.SetFloat("_EnterColdTransition", 0);
+            playerMat.SetFloat("_Texture_2_BS", playerTemperature / maxTemp);
         }
-        else if (playerTemperature > 0)
+        else if (playerTemperature < 0)
         {
             temperatureTxt.text = ("-" + (int)playerTemperature + " C");
+            playerMat.SetFloat("_EnterColdTransition", 1);
+            playerMat.SetFloat("_Texture_1_BS", playerTemperature / maxTemp);
         }
         UpdateText();
       //  temperatureTxt.text = ((int)playerTemperature + " C");
-        playerMat.SetFloat("_FillAmount", playerTemperature / maxTemp);
+        //playerMat.SetFloat("_FillAmount", playerTemperature / maxTemp);        
     }
 
     void UpdateText()
