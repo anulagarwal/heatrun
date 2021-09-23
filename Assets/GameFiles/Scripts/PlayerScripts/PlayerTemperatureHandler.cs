@@ -97,7 +97,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             temperatureTxt.text = ("-" + (int)playerTemperature + " C");
             playerMat.SetFloat("_EnterColdTransition", 1);
-            playerMat.SetFloat("_Texture_1_BS", playerTemperature / maxTemp);
+            playerMat.SetFloat("_Texture_1_BS", -(playerTemperature) / maxTemp);
         }
         UpdateText();
       //  temperatureTxt.text = ((int)playerTemperature + " C");
