@@ -9,6 +9,8 @@ public class ObstaclesHandler : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float temperature = 0f;
     [SerializeField] private bool stickable = false;
+    [SerializeField] private bool grounded = false;
+
     [SerializeField] private float obstacleDestroyTime = 0f;
 
     [Header("Components Reference")]
@@ -29,6 +31,8 @@ public class ObstaclesHandler : MonoBehaviour
     public float GetTemperature { get => temperature; }
 
     public bool IsStickable { get => stickable; }
+    public bool IsGrounded { get => grounded; }
+
 
     public float GetObstacleDestroyTime { get => obstacleDestroyTime; }
     #endregion

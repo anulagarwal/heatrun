@@ -39,6 +39,9 @@ public class PlayerTemperatureHandler : MonoBehaviour
         playerMat = meshRenderer.material;
         InitialSettings();
         tempChangeMechanism = null;
+       // tempBar.fillAmount = Mathf.Lerp(tempBar.fillAmount, playerTemperature / maxTemp, barFillSpeed);
+        playerTemperature = 0;
+        UpdateText();
     }
 
     private void Update()
@@ -106,7 +109,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
 
     void UpdateText()
     {
-        if (playerTemperature > 0 && playerTemperature < 20)
+        if (playerTemperature >= 0 && playerTemperature < 20)
         {
             tempText.text = "COLD!";
         }

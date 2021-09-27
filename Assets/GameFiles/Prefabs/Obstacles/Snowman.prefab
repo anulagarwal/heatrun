@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd2905cb6642ae45817e961e8e1d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: -50
+  temperature: -20
   stickable: 0
   obstacleDestroyTime: 0
   obstacleTempTxt: {fileID: 0}
