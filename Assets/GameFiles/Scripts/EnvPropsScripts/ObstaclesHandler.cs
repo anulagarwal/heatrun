@@ -53,9 +53,11 @@ public class ObstaclesHandler : MonoBehaviour
         {
             temperature += changeSpeed * Time.deltaTime;
         }
+        
 
-        if(temperature == 0)
+        if(Mathf.RoundToInt(temperature) == 0)
         {
+            PlayerSingleton.Instance.GetPlayerTemperatureHandler.TempChangeStop();
             Destroy(gameObject);
         }
         if (obstacleTempTxt)

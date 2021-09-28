@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.17299032, g: 0.6664945, b: 0.9190012, a: 1}
+  m_IndirectSpecularColor: {r: 0.17296991, g: 0.6666198, b: 0.91835046, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5512,7 +5512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTemp: -100
   maxTemp: 100
-  tempChangeSpeed: 5
+  tempChangeSpeed: 10
   barFillSpeed: 0.1
   meshRenderer: {fileID: 9087965812864290238}
   temperatureTxt: {fileID: 1991736270}
@@ -38304,6 +38304,10 @@ PrefabInstance:
     - target: {fileID: 1464489577050902713, guid: 0d75e586d62979049b3876bd913f36f7, type: 3}
       propertyPath: m_Name
       value: Lava
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464489577050902713, guid: 0d75e586d62979049b3876bd913f36f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1464489577050902717, guid: 0d75e586d62979049b3876bd913f36f7, type: 3}
       propertyPath: m_RootOrder

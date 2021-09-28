@@ -182,6 +182,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
         tempChangeMechanism = null;
         ActiveStuckedObstacle = null;
         PlayerSingleton.Instance.GetPlayerMovementHandler.ForceStop = false;
+        PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
+
     }
     #endregion
 }
