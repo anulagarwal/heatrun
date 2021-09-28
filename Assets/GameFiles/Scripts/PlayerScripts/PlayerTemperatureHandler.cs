@@ -19,6 +19,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [SerializeField] private SkinnedMeshRenderer meshRenderer = null;
     [SerializeField] private TextMeshPro temperatureTxt = null;
     [SerializeField] private TextMeshProUGUI tempText = null;
+    [SerializeField] private GameObject flamePS = null;
 
     [SerializeField] private Image tempBar = null;
 
@@ -95,6 +96,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
             temperatureTxt.text = ((int)playerTemperature + " C");
             playerMat.SetFloat("_EnterColdTransition", 0);
             playerMat.SetFloat("_Texture_2_BS", playerTemperature / maxTemp);
+            playerMat.SetFloat("_EmissionPower", 15f);
         }
         else if (playerTemperature < 0)
         {
@@ -162,6 +164,14 @@ public class PlayerTemperatureHandler : MonoBehaviour
             playerTemperature = minTemp;
         }
 
+        if (playerTemperature > 0)
+        {
+            flamePS.SetActive(true);
+        }
+        else
+        {
+            flamePS.SetActive(false);
+        }
         TempTxtUpdate();
     }
     #endregion
