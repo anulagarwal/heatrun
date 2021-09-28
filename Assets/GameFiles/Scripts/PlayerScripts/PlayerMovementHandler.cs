@@ -39,12 +39,7 @@ public class PlayerMovementHandler : MonoBehaviour
             transform.Translate(new Vector3(shiftSpeed, 0, moveSpeed) * Time.deltaTime);
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, -4.5f, 4.5f), transform.position.y, transform.position.z);
         }
-        else
-        {
-            TouchInputs();
-            transform.Translate(new Vector3(shiftSpeed, 0, 0) * Time.deltaTime);
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -4.5f, 4.5f), transform.position.y, transform.position.z);
-        }
+       
     }
     #endregion
 

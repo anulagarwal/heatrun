@@ -73,6 +73,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
     {
         playerTemperature -= tempChangeSpeed * Time.deltaTime;
         TempTxtUpdate();
+        
         if (ActiveStuckedObstacle)
         {
             ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, true);
@@ -148,8 +149,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             tempChangeMechanism += TempIncrement;
         }
+        print("cckc");
 
-        Invoke("TempChangeStop", timer);
     }
 
     public void UpdatePlayerTemperature(float value)

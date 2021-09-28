@@ -40,7 +40,7 @@ public class ObstaclesHandler : MonoBehaviour
     #region Public Core Functions
     public void DestroyObstacle()
     {
-        Destroy(this.gameObject, obstacleDestroyTime);
+       // Destroy(this.gameObject, obstacleDestroyTime);
     }
 
     public void ChangeObstacleTemperature(float changeSpeed, bool decrease)
@@ -54,6 +54,10 @@ public class ObstaclesHandler : MonoBehaviour
             temperature += changeSpeed * Time.deltaTime;
         }
 
+        if(temperature == 0)
+        {
+            Destroy(gameObject);
+        }
         if (obstacleTempTxt)
         {
             obstacleTempTxt.SetText(((int)temperature).ToString());
