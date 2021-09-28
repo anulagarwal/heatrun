@@ -19,12 +19,18 @@ public class PlayerAnimationsHandler : MonoBehaviour
         {
             case PlayerAnimationState.Idle:
                 playerAnimator.SetBool("b_Run", false);
+                playerAnimator.SetBool("b_Push", false);
                 break;
             case PlayerAnimationState.Run:
                 playerAnimator.SetBool("b_Run", true);
+                playerAnimator.SetBool("b_Push", false);
                 break;
             case PlayerAnimationState.Victory:
                 playerAnimator.SetTrigger("t_Victory");
+                break;
+            case PlayerAnimationState.Push:
+                playerAnimator.SetBool("b_Run", false);
+                playerAnimator.SetBool("b_Push", true);
                 break;
         }
     }

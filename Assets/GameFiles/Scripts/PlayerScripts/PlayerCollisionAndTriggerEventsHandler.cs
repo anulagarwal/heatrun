@@ -8,6 +8,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
     #region Properties
     [Header("Components Reference")]
     [SerializeField] private PlayerMovementHandler playerMovementHandler = null;
+    [SerializeField] private PlayerAnimationsHandler playerAnimationsHandler = null; 
     [SerializeField] private PlayerTemperatureHandler playerTemperatureHandler = null;
     [SerializeField] private ParticleSystem tempRiseVFX = null;
     [SerializeField] private ParticleSystem tempDropVFX = null;
@@ -48,6 +49,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                     else
                     {
                         PlayerSingleton.Instance.GetPlayerMovementHandler.ForceStop = true;
+                        playerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Push);
                         //other.gameObject.transform.position = obstacleHolder.position;
                         //other.gameObject.transform.parent = obstacleHolder;
                         obstaclesHandler.DestroyObstacle();
@@ -81,6 +83,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
         {
             if (obstaclesHandler.IsStickable)
             {
+                playerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
                 playerTemperatureHandler.TempChangeStop();
             }
         }

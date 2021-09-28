@@ -16,5 +16,6 @@ public enum PlayerAnimationState
 {
     Idle,
     Run,
+    Push,
     Victory
 };
