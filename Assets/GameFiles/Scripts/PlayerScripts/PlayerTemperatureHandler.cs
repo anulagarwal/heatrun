@@ -76,7 +76,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
         
         if (ActiveStuckedObstacle)
         {
-            ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, true);
+            ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, false);
         }
     }
 
@@ -86,7 +86,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
         TempTxtUpdate();
         if (ActiveStuckedObstacle)
         {
-            ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, false);
+            ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, true);
         }
     }
 
@@ -149,7 +149,6 @@ public class PlayerTemperatureHandler : MonoBehaviour
         {
             tempChangeMechanism += TempIncrement;
         }
-        print("cckc");
 
     }
 

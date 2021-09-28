@@ -54,12 +54,12 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                         playerTemperatureHandler.ActiveStuckedObstacle = obstaclesHandler;
                         if (obstaclesHandler.GetTemperature < 0)
                         {
-                            playerTemperatureHandler.TempChange(false, obstaclesHandler.GetObstacleDestroyTime);
+                            playerTemperatureHandler.TempChange(true, obstaclesHandler.GetObstacleDestroyTime);
 
                         }
                         else
                         {
-                            playerTemperatureHandler.TempChange(true, obstaclesHandler.GetObstacleDestroyTime);
+                            playerTemperatureHandler.TempChange(false, obstaclesHandler.GetObstacleDestroyTime);
                         }
                     }
                 }
