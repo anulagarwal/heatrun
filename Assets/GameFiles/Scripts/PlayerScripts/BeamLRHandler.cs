@@ -13,7 +13,7 @@ public class BeamLRHandler : MonoBehaviour
     #region MonoBehaviour Functions
     private void Update()
     {
-        lineRenderer.SetPosition(1, beamTip.localPosition);
+        lineRenderer.SetPosition(1, beamTip.position - transform.position);
     }
     #endregion
 }
