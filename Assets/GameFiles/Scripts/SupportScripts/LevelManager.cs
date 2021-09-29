@@ -43,6 +43,8 @@ public class LevelManager : MonoBehaviour
         PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = true;
         PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
         LevelUIManager.Instance.SwitchUIPanel(UIPanelState.Gameplay);
+        TinySauce.OnGameStarted("" + currentLevel);
+        
     }
     public void GameOver(GameOverState state)
     {
@@ -53,9 +55,12 @@ public class LevelManager : MonoBehaviour
             currentLevel++;
             PlayerPrefs.SetInt("level", currentLevel);
             Invoke("LevelEndMultiplierPanel", 1.4f);
+            TinySauce.OnGameFinished(true,0);
+
         }
         else if (state == GameOverState.Defeat)
         {
+            TinySauce.OnGameFinished(false, 0);
 
             PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
             PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Victory);
