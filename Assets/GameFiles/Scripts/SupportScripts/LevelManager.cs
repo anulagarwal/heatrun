@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using Cinemachine;
 
@@ -12,6 +11,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject confettiObj = null;
     [SerializeField] private GameObject cm_1 = null;
     [SerializeField] private GameObject cm_2 = null;
+
+    [Header("Attributes")]
+    [SerializeField] private int maxLevels;
+
+    private int currentLevel;
     #endregion
 
     #region MonoBehaviour Functions
@@ -28,6 +32,7 @@ public class LevelManager : MonoBehaviour
     {
         PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
         PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Idle);
+        currentLevel = PlayerPrefs.GetInt("level", 1);
     }
     #endregion
 
@@ -45,6 +50,8 @@ public class LevelManager : MonoBehaviour
         {
             PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Victory);
             PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
+            currentLevel++;
+            PlayerPrefs.SetInt("level", currentLevel);
             Invoke("LevelEndMultiplierPanel", 1.4f);
         }
         else if (state == GameOverState.Defeat)
@@ -69,6 +76,18 @@ public class LevelManager : MonoBehaviour
         confettiObj.transform.position = GameObject.FindGameObjectWithTag("ConfettiSpawnPoint").transform.position;
         confettiObj.SetActive(true);
         Invoke("VictoryScreen", 2f);
+    }
+
+    public void ChangeLevel()
+    {
+        if (currentLevel > maxLevels)
+        {
+            SceneManager.LoadScene("Level " + Random.Range(1,maxLevels));
+        }
+        else
+        {
+            SceneManager.LoadScene("Level " + currentLevel);
+        }
     }
     #endregion
 
