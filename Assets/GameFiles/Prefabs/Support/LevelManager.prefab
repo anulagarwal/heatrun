@@ -99,7 +99,7 @@ MonoBehaviour:
   cm_1: {fileID: 0}
   cm_2: {fileID: 0}
   ppObj: {fileID: 653260035}
-  maxLevels: 1
+  maxLevels: 3
 --- !u!114 &1220988303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   - {fileID: 5273816891521868823, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
   - {fileID: 5273816891521868823, guid: 2bd7a884f319a42e8ae408a82df912fb, type: 3}
   - {fileID: 5273816891521868823, guid: feddf1e42e6414752b7652fef6948cb2, type: 3}
-  - {fileID: 5273816891521868823, guid: feddf1e42e6414752b7652fef6948cb2, type: 3}
+  - {fileID: 5273816891521868823, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
   - {fileID: 1665217781989440757, guid: 23c70f97b0fa54838a54267c5c2e0c3d, type: 3}
   spawnedObjects: []
   platformDistance: 25

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -50
+  m_text: -30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
   m_sharedMaterial: {fileID: 5637075468222106648, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd2905cb6642ae45817e961e8e1d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: -50
+  temperature: -20
   stickable: 1
   grounded: 0
   obstacleDestroyTime: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd2905cb6642ae45817e961e8e1d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: -50
+  temperature: -30
   stickable: 1
   grounded: 0
   obstacleDestroyTime: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd2905cb6642ae45817e961e8e1d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: -50
+  temperature: -75
   stickable: 1
   grounded: 0
   obstacleDestroyTime: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -50
+  m_text: -30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
   m_sharedMaterial: {fileID: 5637075468222106648, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -50
+  m_text: -20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
   m_sharedMaterial: {fileID: 5637075468222106648, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd2905cb6642ae45817e961e8e1d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: -50
+  temperature: -100
   stickable: 1
   grounded: 0
   obstacleDestroyTime: 0
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -50
+  m_text: -100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
   m_sharedMaterial: {fileID: 5637075468222106648, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
@@ -925,7 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd2905cb6642ae45817e961e8e1d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: -50
+  temperature: -30
   stickable: 1
   grounded: 0
   obstacleDestroyTime: 0
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -50
+  m_text: -75
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
   m_sharedMaterial: {fileID: 5637075468222106648, guid: 40aa266966a8f4c38b80ea47b4041059, type: 2}
