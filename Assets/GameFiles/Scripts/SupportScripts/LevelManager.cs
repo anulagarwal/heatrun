@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject confettiObj = null;
     [SerializeField] private GameObject cm_1 = null;
     [SerializeField] private GameObject cm_2 = null;
+    [SerializeField] private GameObject ppObj = null;
 
     [Header("Attributes")]
     [SerializeField] private int maxLevels;
@@ -37,6 +38,11 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     #region Public Core Functions
+    public void EnablePP(bool value)
+    {
+        ppObj.SetActive(value);
+    }
+
 
     public void StartLevel()
     {

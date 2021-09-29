@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &653260035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653260038}
+  - component: {fileID: 653260036}
+  m_Layer: 0
+  m_Name: Post-process Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &653260038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653260035}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2536839777262078215}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653260036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653260035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
 --- !u!1 &2536839777262078232
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,6 +79,7 @@ Transform:
   m_Children:
   - {fileID: 1667944840333525424}
   - {fileID: 528225295705832309}
+  - {fileID: 653260038}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,6 +98,8 @@ MonoBehaviour:
   confettiObj: {fileID: 1667944840333525391}
   cm_1: {fileID: 0}
   cm_2: {fileID: 0}
+  ppObj: {fileID: 653260035}
+  maxLevels: 1
 --- !u!114 &1220988303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,11 +114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platforms:
   - {fileID: 5273816891521868823, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
-  - {fileID: 5273816891521868823, guid: a1ba1a2d4d7314ec7861c0752e4702b4, type: 3}
+  - {fileID: 5273816891521868823, guid: 2bd7a884f319a42e8ae408a82df912fb, type: 3}
   - {fileID: 5273816891521868823, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
-  - {fileID: 5273816891521868823, guid: a1ba1a2d4d7314ec7861c0752e4702b4, type: 3}
-  - {fileID: 5273816891521868823, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
-  - {fileID: 5273816891521868823, guid: 93debd12d7b614e5eb6633af6ccdb562, type: 3}
+  - {fileID: 5273816891521868823, guid: 2bd7a884f319a42e8ae408a82df912fb, type: 3}
+  - {fileID: 5273816891521868823, guid: feddf1e42e6414752b7652fef6948cb2, type: 3}
+  - {fileID: 5273816891521868823, guid: feddf1e42e6414752b7652fef6948cb2, type: 3}
   - {fileID: 1665217781989440757, guid: 23c70f97b0fa54838a54267c5c2e0c3d, type: 3}
   spawnedObjects: []
   platformDistance: 25

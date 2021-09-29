@@ -127,6 +127,7 @@ public class LevelUIManager : MonoBehaviour
         endPBMechanism = null;
         powerMultiplierBtn.SetActive(false);
         PlayerSingleton.Instance.GetBeamObj.SetActive(true);
+        LevelManager.Instance.EnablePP(true);
 
         //print();
         Invoke("StopBeam", (PlayerSingleton.Instance.GetPlayerTemperatureHandler.GetPlayerTemperature * endPB.fillAmount) / 100 * 10);
@@ -136,6 +137,7 @@ public class LevelUIManager : MonoBehaviour
     {
         PlayerSingleton.Instance.GetBeamObj.SetActive(false);
         LevelManager.Instance.DisplayEndScreen();
+        LevelManager.Instance.EnablePP(false);
     }
     #endregion
 }
