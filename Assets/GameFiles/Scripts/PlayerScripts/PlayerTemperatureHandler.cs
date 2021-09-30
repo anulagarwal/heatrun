@@ -20,6 +20,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [SerializeField] private TextMeshPro temperatureTxt = null;
     [SerializeField] private TextMeshProUGUI tempText = null;
     [SerializeField] private GameObject flamePS = null;
+    [SerializeField] private List<ParticleSystem> flames = null;
+
 
     [SerializeField] private Image tempBar = null;
 
@@ -42,6 +44,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
         tempChangeMechanism = null;
        // tempBar.fillAmount = Mathf.Lerp(tempBar.fillAmount, playerTemperature / maxTemp, barFillSpeed);
         playerTemperature = 0;
+        UpdatePlayerTemperature(0);
         UpdateText();
     }
 
@@ -172,6 +175,11 @@ public class PlayerTemperatureHandler : MonoBehaviour
         else
         {
             flamePS.SetActive(false);
+        }
+
+        foreach(ParticleSystem ps in flames)
+        {
+            ps.startSize = playerTemperature / 100;
         }
         TempTxtUpdate();
     }
