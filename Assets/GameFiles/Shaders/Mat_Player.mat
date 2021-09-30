@@ -79,11 +79,11 @@ Material:
     - Vector1_a4989c1662104c2b8d42a7f096fedc0f: 1
     - Vector1_b397f4b07d96491a9e806fb642e7ff5b: 0.5
     - Vector1_e663938579cb41d09fc7dc5eb32a0965: 20
-    - _EmissionPower: 1
+    - _EmissionPower: 19.33
     - _EnterColdTransition: 0
     - _FillAmount: -1
     - _Texture_1_BS: -0.1
-    - _Texture_2_BS: -0.1
+    - _Texture_2_BS: 1.1
     m_Colors:
     - Color_30fdfc3d232344d6845d48ba7eaec535: {r: 0, g: 0, b: 0, a: 0}
     - Color_3d217d15edf443f3ad63f0f5acce7e66: {r: 0.00377351, g: 0.9140977, b: 1, a: 1}
