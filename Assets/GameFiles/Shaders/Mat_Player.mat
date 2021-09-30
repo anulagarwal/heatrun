@@ -75,6 +75,7 @@ Material:
     - Vector1_a4989c1662104c2b8d42a7f096fedc0f: 1
     - Vector1_b397f4b07d96491a9e806fb642e7ff5b: 0.5
     - Vector1_e663938579cb41d09fc7dc5eb32a0965: 20
+    - _EmissionPower: 1
     - _EnterColdTransition: 0
     - _FillAmount: -1
     - _Texture_1_BS: -0.1
