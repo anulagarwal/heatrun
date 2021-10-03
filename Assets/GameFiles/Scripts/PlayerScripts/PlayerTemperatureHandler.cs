@@ -179,7 +179,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
 
         foreach(ParticleSystem ps in flames)
         {
-            ps.startSize = playerTemperature / 100;
+            ps.startSize =( playerTemperature / 100) *1.5f;
         }
         TempTxtUpdate();
     }
