@@ -20,20 +20,28 @@ public class PlayerAnimationsHandler : MonoBehaviour
             case PlayerAnimationState.Idle:
                 playerAnimator.SetBool("b_Run", false);
                 playerAnimator.SetBool("b_Push", false);
+                playerAnimator.SetBool("b_SlowWalk", false);
                 break;
             case PlayerAnimationState.Run:
                 playerAnimator.SetBool("b_Run", true);
                 playerAnimator.SetBool("b_Push", false);
+                playerAnimator.SetBool("b_SlowWalk", false);
+                break;
+            case PlayerAnimationState.SlowWalk:
+                playerAnimator.SetBool("b_SlowWalk", true);
                 break;
             case PlayerAnimationState.Victory:
                 playerAnimator.SetTrigger("t_Victory");
+                playerAnimator.SetBool("b_SlowWalk", false);
                 break;
             case PlayerAnimationState.Push:
                 playerAnimator.SetBool("b_Run", false);
                 playerAnimator.SetBool("b_Push", true);
+                playerAnimator.SetBool("b_SlowWalk", false);
                 break;
             case PlayerAnimationState.Defeat:
                 playerAnimator.SetTrigger("t_Defeat");
+                playerAnimator.SetBool("b_SlowWalk", false);
                 break;
         }
     }

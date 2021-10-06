@@ -5628,6 +5628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 11
   shiftSpeed: 0
+  slowWalkSpeed: 5
   characterController: {fileID: 332831737}
 --- !u!114 &332831740
 MonoBehaviour:

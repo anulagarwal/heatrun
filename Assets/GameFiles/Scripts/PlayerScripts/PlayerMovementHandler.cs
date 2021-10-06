@@ -8,6 +8,7 @@ public class PlayerMovementHandler : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 0f;
     [SerializeField] private float shiftSpeed = 0f;
+    [SerializeField] private float slowWalkSpeed = 0f;
 
 
     [Header("Components Reference")]
@@ -17,6 +18,7 @@ public class PlayerMovementHandler : MonoBehaviour
     private Vector3 movementDirection = Vector3.zero;
     private float screenCenterX = 0f;
     private float oldX;
+    private float speedTemp = 0f;
     #endregion
 
     #region MonoBehaviour Functions
@@ -25,7 +27,7 @@ public class PlayerMovementHandler : MonoBehaviour
 
         //Testing
         PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
-
+        speedTemp = moveSpeed;
         ForceStop = false;
     }
 
@@ -36,7 +38,7 @@ public class PlayerMovementHandler : MonoBehaviour
             TouchInputs();
             // movementDirection = new Vector3(movementJS.Horizontal, 0, 1).normalized;
             //characterController.Move(movementDirection * Time.deltaTime * moveSpeed);
-            transform.Translate(new Vector3(shiftSpeed, 0, moveSpeed) * Time.deltaTime);
+            transform.Translate(new Vector3(shiftSpeed, 0, speedTemp) * Time.deltaTime);
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, -4.5f, 4.5f), transform.position.y, transform.position.z);
         }
        
@@ -59,6 +61,20 @@ public class PlayerMovementHandler : MonoBehaviour
                 oldX = Input.mousePosition.x;
             }
         shiftSpeed = x;       
+    }
+    #endregion
+
+    #region Public Core Functions
+    public void EnableDefaultSpeed(bool value)
+    {
+        if (value)
+        {
+            speedTemp = moveSpeed;
+        }
+        else
+        {
+            speedTemp = slowWalkSpeed;
+        }
     }
     #endregion
 

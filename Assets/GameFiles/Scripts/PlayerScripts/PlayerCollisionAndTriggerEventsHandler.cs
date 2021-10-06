@@ -62,6 +62,12 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                         }
                     }
                 }
+
+                if (obstaclesHandler.SlowDownPlayer)
+                {
+                    PlayerSingleton.Instance.GetPlayerMovementHandler.EnableDefaultSpeed(false);
+                    PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.SlowWalk);
+                }
             }
         }
         else if (other.gameObject.tag == "Finish")
@@ -82,6 +88,12 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
             {
                 playerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
                 playerTemperatureHandler.TempChangeStop();
+            }
+
+            if (obstaclesHandler.SlowDownPlayer)
+            {
+                PlayerSingleton.Instance.GetPlayerMovementHandler.EnableDefaultSpeed(true);
+                PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
             }
         }
     }
