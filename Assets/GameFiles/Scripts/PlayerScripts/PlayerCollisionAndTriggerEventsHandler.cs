@@ -13,6 +13,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
     [SerializeField] private ParticleSystem tempRiseVFX = null;
     [SerializeField] private ParticleSystem tempDropVFX = null;
     [SerializeField] private Transform obstacleHolder = null;
+    [SerializeField] private ParticleSystem hotTXTPS = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -65,6 +66,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
 
                 if (obstaclesHandler.SlowDownPlayer)
                 {
+                    hotTXTPS.Play();
                     PlayerSingleton.Instance.GetPlayerMovementHandler.EnableDefaultSpeed(false);
                     PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.SlowWalk);
                 }
@@ -92,6 +94,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
 
             if (obstaclesHandler.SlowDownPlayer)
             {
+                hotTXTPS.Stop();
                 PlayerSingleton.Instance.GetPlayerMovementHandler.EnableDefaultSpeed(true);
                 PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
             }
