@@ -32,6 +32,9 @@ public class PlayerAnimationsHandler : MonoBehaviour
                 playerAnimator.SetBool("b_Run", false);
                 playerAnimator.SetBool("b_Push", true);
                 break;
+            case PlayerAnimationState.Defeat:
+                playerAnimator.SetTrigger("t_Defeat");
+                break;
         }
     }
     #endregion

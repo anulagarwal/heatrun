@@ -49,10 +49,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                     else
                     {
                         PlayerSingleton.Instance.GetPlayerMovementHandler.ForceStop = true;
-                        playerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Push);
-                        //other.gameObject.transform.position = obstacleHolder.position;
-                        //other.gameObject.transform.parent = obstacleHolder;
-                        obstaclesHandler.DestroyObstacle();
+                        playerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Push);                                             
                         playerTemperatureHandler.ActiveStuckedObstacle = obstaclesHandler;
                         if (obstaclesHandler.GetTemperature < 0)
                         {
@@ -98,22 +95,26 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                 if (obstaclesHandler.IsGrounded)
                 {
 
-                    playerTemperatureHandler.UpdatePlayerTemperature(other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature/10);
+                    if (playerTemperatureHandler.GetPlayerTemperature > 0)
+                    {
+                        print(playerTemperatureHandler.GetPlayerTemperature);
+                        playerTemperatureHandler.UpdatePlayerTemperature(other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature / 10);
 
-                    if (obstaclesHandler.GetTemperature < 0)
-                    {
-                        tempRiseVFX.Stop();
-                        if (!tempDropVFX.isPlaying)
+                        if (obstaclesHandler.GetTemperature < 0)
                         {
-                            tempDropVFX.Play();
+                            tempRiseVFX.Stop();
+                            if (!tempDropVFX.isPlaying)
+                            {
+                                tempDropVFX.Play();
+                            }
                         }
-                    }
-                    else if (obstaclesHandler.GetTemperature > 0)
-                    {
-                        tempDropVFX.Stop();
-                        if (!tempRiseVFX.isPlaying)
+                        else if (obstaclesHandler.GetTemperature > 0)
                         {
-                            tempRiseVFX.Play();
+                            tempDropVFX.Stop();
+                            if (!tempRiseVFX.isPlaying)
+                            {
+                                tempRiseVFX.Play();
+                            }
                         }
                     }
                 }

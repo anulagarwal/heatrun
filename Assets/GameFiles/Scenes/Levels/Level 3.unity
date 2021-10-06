@@ -10868,6 +10868,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: PS_Ice (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 642485409828162609, guid: 00a62eb49299f7a49b4dea120876871d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642485409828162622, guid: 00a62eb49299f7a49b4dea120876871d, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642485409828162622, guid: 00a62eb49299f7a49b4dea120876871d, type: 3}
+      propertyPath: lengthInSec
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 642485409828162622, guid: 00a62eb49299f7a49b4dea120876871d, type: 3}
+      propertyPath: SizeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642485409828162622, guid: 00a62eb49299f7a49b4dea120876871d, type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642485409828162622, guid: 00a62eb49299f7a49b4dea120876871d, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642485409828162622, guid: 00a62eb49299f7a49b4dea120876871d, type: 3}
+      propertyPath: VelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 642485409828162623, guid: 00a62eb49299f7a49b4dea120876871d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -16143,7 +16171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767073354}
   m_LocalRotation: {x: 0.27563733, y: 0, z: 0, w: 0.96126175}
-  m_LocalPosition: {x: 0, y: 10.67, z: -21.939999}
+  m_LocalPosition: {x: 0, y: 10.17, z: -19.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1618448775}
@@ -35962,6 +35990,10 @@ PrefabInstance:
     - target: {fileID: 4297013670974089989, guid: daaf2d05106444483ad1fc4b85e125d8, type: 3}
       propertyPath: m_Name
       value: mixamorig_Hips
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297013670974089989, guid: daaf2d05106444483ad1fc4b85e125d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9186749536582218352, guid: daaf2d05106444483ad1fc4b85e125d8, type: 3}
       propertyPath: m_RootOrder
@@ -56077,6 +56109,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5565642054969109598, guid: 96f3c426d24b4a24ea9875c5e84f36a5, type: 3}
+      propertyPath: lengthInSec
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565642054969109598, guid: 96f3c426d24b4a24ea9875c5e84f36a5, type: 3}
+      propertyPath: SizeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565642054969109598, guid: 96f3c426d24b4a24ea9875c5e84f36a5, type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565642054969109598, guid: 96f3c426d24b4a24ea9875c5e84f36a5, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565642054969109598, guid: 96f3c426d24b4a24ea9875c5e84f36a5, type: 3}
+      propertyPath: VelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565642054969109599, guid: 96f3c426d24b4a24ea9875c5e84f36a5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96f3c426d24b4a24ea9875c5e84f36a5, type: 3}
 --- !u!4 &1577549994 stripped
@@ -56333,7 +56389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 10.92, z: -13.71}
+  m_FollowOffset: {x: 0, y: 10.42, z: -11.33}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -56560,7 +56616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_LocalRotation: {x: 0.27563733, y: 0, z: 0, w: 0.96126175}
-  m_LocalPosition: {x: 0, y: 10.67, z: -21.939999}
+  m_LocalPosition: {x: 0, y: 10.17, z: -19.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61670,7 +61726,7 @@ PrefabInstance:
     - target: {fileID: 1220988303, guid: b8d0b38f189dd4c42b5be254e3f8ebff, type: 3}
       propertyPath: platforms.Array.data[0]
       value: 
-      objectReference: {fileID: 5273816891521868823, guid: a1ba1a2d4d7314ec7861c0752e4702b4, type: 3}
+      objectReference: {fileID: 5273816891521868823, guid: 67b43d48d6e834a928c033cd18639414, type: 3}
     - target: {fileID: 1220988303, guid: b8d0b38f189dd4c42b5be254e3f8ebff, type: 3}
       propertyPath: platforms.Array.data[1]
       value: 

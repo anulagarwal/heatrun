@@ -434,6 +434,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6256924090848699660, guid: 7a1f6e49867fc04459ebc5aeb5afe64b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6256924091007590897, guid: 7a1f6e49867fc04459ebc5aeb5afe64b, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -5649,6 +5653,7 @@ MonoBehaviour:
   temperatureTxt: {fileID: 1991736270}
   tempText: {fileID: 351228129}
   flamePS: {fileID: 684192982}
+  flames: []
   tempBar: {fileID: 103722287}
   playerTemperature: 0
 --- !u!114 &332831741

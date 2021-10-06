@@ -69,7 +69,7 @@ public class LevelManager : MonoBehaviour
             TinySauce.OnGameFinished(false, 0);
 
             PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
-            PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Victory);
+            PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Defeat);
             Invoke("LoseScreen", 1.4f);
         }
     }

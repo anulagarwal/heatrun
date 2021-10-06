@@ -43,7 +43,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
         InitialSettings();
         tempChangeMechanism = null;
        // tempBar.fillAmount = Mathf.Lerp(tempBar.fillAmount, playerTemperature / maxTemp, barFillSpeed);
-        playerTemperature = 0;
+        playerTemperature = 50;
         UpdatePlayerTemperature(0);
         UpdateText();
     }
@@ -76,7 +76,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
     {
         playerTemperature -= tempChangeSpeed * Time.deltaTime;
         TempTxtUpdate();
-        
+        UpdatePlayerTemperature(0);
         if (ActiveStuckedObstacle)
         {
             ActiveStuckedObstacle.ChangeObstacleTemperature(tempChangeSpeed, false);
@@ -86,6 +86,8 @@ public class PlayerTemperatureHandler : MonoBehaviour
     private void TempIncrement()
     {
         playerTemperature += tempChangeSpeed * Time.deltaTime;
+        UpdatePlayerTemperature(0);
+
         TempTxtUpdate();
         if (ActiveStuckedObstacle)
         {
@@ -177,7 +179,14 @@ public class PlayerTemperatureHandler : MonoBehaviour
             flamePS.SetActive(false);
         }
 
-        foreach(ParticleSystem ps in flames)
+        if (playerTemperature < 0)
+        {        
+            LevelManager.Instance.GameOver(GameOverState.Defeat);
+            PlayerSingleton.Instance.GetPlayerTemperatureHandler.enabled = false;
+            PlayerSingleton.Instance.GetPlayerMovementHandler.enabled = false;
+        }
+
+        foreach (ParticleSystem ps in flames)
         {
             ps.startSize =( playerTemperature / 100) *1.5f;
         }
