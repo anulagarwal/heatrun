@@ -5632,6 +5632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 11
   shiftSpeed: 0
+  slowWalkSpeed: 0
   characterController: {fileID: 332831737}
 --- !u!114 &332831740
 MonoBehaviour:
@@ -5654,6 +5655,7 @@ MonoBehaviour:
   tempText: {fileID: 351228129}
   flamePS: {fileID: 684192982}
   flames: []
+  tempBarParent: {fileID: 0}
   tempBar: {fileID: 103722287}
   playerTemperature: 0
 --- !u!114 &332831741
@@ -5674,6 +5676,7 @@ MonoBehaviour:
   tempRiseVFX: {fileID: 1577549995}
   tempDropVFX: {fileID: 552565262}
   obstacleHolder: {fileID: 1177431289}
+  hotTXTPS: {fileID: 0}
 --- !u!1 &343722747
 GameObject:
   m_ObjectHideFlags: 0
@@ -6533,7 +6536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767073354}
   m_LocalRotation: {x: 0.27563733, y: 0, z: 0, w: 0.96126175}
-  m_LocalPosition: {x: 0, y: 10.67, z: -21.939999}
+  m_LocalPosition: {x: 0, y: 8.75, z: -17.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1618448775}
@@ -17823,7 +17826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 10.92, z: -13.71}
+  m_FollowOffset: {x: 0, y: 9, z: -8.91}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -18050,7 +18053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_LocalRotation: {x: 0.27563733, y: 0, z: 0, w: 0.96126175}
-  m_LocalPosition: {x: 0, y: 10.67, z: -21.939999}
+  m_LocalPosition: {x: 0, y: 8.75, z: -17.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

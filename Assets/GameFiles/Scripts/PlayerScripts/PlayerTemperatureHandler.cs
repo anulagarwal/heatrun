@@ -21,6 +21,7 @@ public class PlayerTemperatureHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tempText = null;
     [SerializeField] private GameObject flamePS = null;
     [SerializeField] private List<ParticleSystem> flames = null;
+    [SerializeField] private GameObject tempBarParent;
 
 
     [SerializeField] private Image tempBar = null;
@@ -156,6 +157,15 @@ public class PlayerTemperatureHandler : MonoBehaviour
             tempChangeMechanism += TempIncrement;
         }
 
+    }
+    public void HideTempBar()
+    {
+        tempBarParent.SetActive(false);
+    }
+
+    public void ShowTempBar()
+    {
+        tempBarParent.SetActive(true);
     }
 
     public void UpdatePlayerTemperature(float value)

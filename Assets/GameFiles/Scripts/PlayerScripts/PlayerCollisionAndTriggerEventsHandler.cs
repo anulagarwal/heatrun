@@ -52,6 +52,7 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                         PlayerSingleton.Instance.GetPlayerMovementHandler.ForceStop = true;
                         playerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Push);                                             
                         playerTemperatureHandler.ActiveStuckedObstacle = obstaclesHandler;
+
                         if (obstaclesHandler.GetTemperature < 0)
                         {
                             playerTemperatureHandler.TempChange(true, obstaclesHandler.GetObstacleDestroyTime);
@@ -67,6 +68,8 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
                 if (obstaclesHandler.SlowDownPlayer)
                 {
                     hotTXTPS.Play();
+                    playerTemperatureHandler.HideTempBar();
+
                     PlayerSingleton.Instance.GetPlayerMovementHandler.EnableDefaultSpeed(false);
                     PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.SlowWalk);
                 }
@@ -90,11 +93,13 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
             {
                 playerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
                 playerTemperatureHandler.TempChangeStop();
+
             }
 
             if (obstaclesHandler.SlowDownPlayer)
             {
                 hotTXTPS.Stop();
+                playerTemperatureHandler.ShowTempBar();
                 PlayerSingleton.Instance.GetPlayerMovementHandler.EnableDefaultSpeed(true);
                 PlayerSingleton.Instance.GetPlayerAnimationsHandler.SwitchAnimation(PlayerAnimationState.Run);
             }
@@ -112,7 +117,6 @@ public class PlayerCollisionAndTriggerEventsHandler : MonoBehaviour
 
                     if (playerTemperatureHandler.GetPlayerTemperature > 0)
                     {
-                        print(playerTemperatureHandler.GetPlayerTemperature);
                         playerTemperatureHandler.UpdatePlayerTemperature(other.gameObject.GetComponent<ObstaclesHandler>().GetTemperature / 10);
 
                         if (obstaclesHandler.GetTemperature < 0)

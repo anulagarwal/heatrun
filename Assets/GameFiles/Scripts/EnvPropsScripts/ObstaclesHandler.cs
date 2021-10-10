@@ -15,6 +15,8 @@ public class ObstaclesHandler : MonoBehaviour
 
     [Header("Components Reference")]
     [SerializeField] private TextMeshPro obstacleTempTxt = null;
+    [SerializeField] private GameObject steam = null;
+
     #endregion
 
     #region MonoBehaviour Functions
@@ -55,7 +57,10 @@ public class ObstaclesHandler : MonoBehaviour
         {
             temperature += changeSpeed * Time.deltaTime;
         }
-        
+        if (stickable)
+        {
+            steam.SetActive(true);
+        }
 
         if(Mathf.RoundToInt(temperature) == 0)
         {
